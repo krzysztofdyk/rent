@@ -24,6 +24,7 @@ public class TenantService {
     public TenantEntity createTenant(TenantRequestDto tenantRequestDto){
         TenantEntity tenantEntity = mapDtoToEntity(tenantRequestDto);
         tenantRepository.save(tenantEntity);
+        log.info("Tenant: " + tenantRequestDto.getName() +  " was created.");
         return tenantEntity;
     }
 
@@ -36,6 +37,7 @@ public class TenantService {
 
     public List<TenantRequestDto> findAllTenants() {
         List<TenantEntity> tenantEntities = tenantRepository.findAll();
+        log.info("All tenants were provided.");
         return mapEntityToDtoList(tenantEntities);
     }
 
@@ -54,12 +56,14 @@ public class TenantService {
     public void deleteTenant(Long id) {
         TenantEntity tenantEntity = tenantRepository.getById(id);
         tenantRepository.delete(tenantEntity);
+        log.info("Tenant: " + tenantEntity.getName() + " was deleted");
     }
 
     public TenantEntity updateTenant(Long id, TenantRequestDto tenantRequestDto) {
-        TenantEntity landlordEntity = tenantRepository.getById(id);
-        landlordEntity.setName(tenantRequestDto.getName());
-        return landlordEntity;
+        TenantEntity tenantEntity = tenantRepository.getById(id);
+        tenantEntity.setName(tenantRequestDto.getName());
+        log.info("Tenant: " + tenantEntity.getName() + " was updated");
+        return tenantEntity;
     }
 
 

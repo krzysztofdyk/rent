@@ -24,6 +24,7 @@ public class HouseService {
     public HouseEntity createHouse(HouseRequestDto houseRequestDto){
         HouseEntity houseEntity = mapDtoToEntity(houseRequestDto);
         houseRepository.save(houseEntity);
+        log.info("House: " + houseRequestDto.getName() +  " was created.");
         return houseEntity;
     }
 
@@ -40,6 +41,7 @@ public class HouseService {
 
     public List<HouseRequestDto> findAllHouses() {
         List<HouseEntity> houseEntities = houseRepository.findAll();
+        log.info("All houses were provided.");
         return mapEntityToDtoList(houseEntities);
     }
 
@@ -62,6 +64,7 @@ public class HouseService {
     public void deleteHouse(Long id) {
         HouseEntity houseEntity = houseRepository.getById(id);
         houseRepository.delete(houseEntity);
+        log.info("House: " + houseEntity.getName() + " was deleted");
     }
 
     public HouseEntity updateHouse(Long id, HouseRequestDto houseRequestDto) {
@@ -72,6 +75,7 @@ public class HouseService {
         houseEntity.setArea(houseRequestDto.getArea());
         houseEntity.setDescription(houseRequestDto.getDescription());
         houseEntity.setLandlordEntity(landlordEntity);
+        log.info("House: " + houseEntity.getName() + " was updated");
         return  houseEntity;
     }
 }

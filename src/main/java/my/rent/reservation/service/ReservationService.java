@@ -47,6 +47,7 @@ public class ReservationService {
         newReservationEntity.setTotalPrice(countTheTotalPrice(reservationRequestDto.getStartDate(),reservationRequestDto.getEndDate(),houseEntity.getUnitPrice()));
 
         reservationRepository.save(newReservationEntity);
+        log.info("Reservation: " + newReservationEntity.getId() +  " was created.");
         return newReservationEntity;
     }
 
@@ -104,12 +105,14 @@ public class ReservationService {
         reservationEntity.setTenantEntity(tenantEntity);
         reservationEntity.setStartDate(reservationRequestDto.getStartDate());
         reservationEntity.setEndDate(reservationRequestDto.getEndDate());
+        log.info("Reservation: " + reservationEntity.getId() + " was updated");
         return reservationEntity;
     }
 
     public void deleteReservation(Long id) {
         ReservationEntity reservationEntity = reservationRepository.getById(id);
         reservationRepository.delete(reservationEntity);
+        log.info("Reservation: " + reservationEntity.getId() + " was deleted");
     }
 
     private ReservationEntity mapDtoToEntity(ReservationRequestDto reservationRequestDto) {
