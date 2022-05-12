@@ -11,7 +11,7 @@ public interface ReservationRepository extends JpaRepository<ReservationEntity,L
     ReservationEntity findByHouseEntity(String name);
     ReservationEntity findByTenantEntity(String name);
 
-    List<ReservationEntity> findAllByHouse(String name);
+    List<ReservationEntity> findAllByHouseEntity(String name);
 
 
 }

@@ -21,6 +21,7 @@ public class LandlordEntity {
     private String name;
 
     @OneToOne
+    @JoinColumn (name = "house_entity_id")
     private HouseEntity houseEntity;
 
 

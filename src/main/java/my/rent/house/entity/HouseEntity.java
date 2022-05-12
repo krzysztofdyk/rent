@@ -25,7 +25,7 @@ public class HouseEntity {
     private String description;
 
     @OneToOne
-    @JoinColumn (name = "landlordEntity")
+    @JoinColumn (name = "landlord_entity_id")
     private LandlordEntity landlordEntity;
 
     @OneToOne (mappedBy = "houseEntity")

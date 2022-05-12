@@ -71,7 +71,7 @@ public class ReservationService {
     }
 
     private void checkIfHouseIsAvailable(LocalDate from, LocalDate to, HouseEntity houseEntity){
-        List<ReservationEntity> reservationEntityList = reservationRepository.findAllByHouse(houseEntity.getName());
+        List<ReservationEntity> reservationEntityList = reservationRepository.findAllByHouseEntity(houseEntity.getName());
 
         boolean check = reservationEntityList.stream()
                 .map(reservationEntity -> from.isAfter(reservationEntity.getStartDate()) && from.isBefore(reservationEntity.getEndDate())
