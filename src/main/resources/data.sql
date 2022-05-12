@@ -1,0 +1,21 @@
+
+insert into HOUSE_ENTITY (id,name,unit_price,area, description)
+values (1,"Penthouse",1000,100,"You will fell like a king.")
+insert into HOUSE_ENTITY (id,name,unit_price,area, description)
+values (2,"Flat",100,25,"You will fell like a student.")
+insert into HOUSE_ENTITY (id,name,unit_price,area, description)
+values (3,"SemiDetachedHouse",500,110,"You will fell like a family member.")
+
+insert into LANDLORD_ENTITY (id,name)
+values (1, "Kris")
+insert into LANDLORD_ENTITY (id,name)
+values (2, "John")
+insert into LANDLORD_ENTITY (id,name)
+values (3, "Mat")
+
+insert into TENANT_ENTITY (id,name)
+values (1, "Anna")
+insert into TENANT_ENTITY (id,name)
+values (2, "Jane")
+insert into TENANT_ENTITY (id,name)
+values (3, "Rebeca")
