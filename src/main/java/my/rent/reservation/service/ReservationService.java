@@ -34,10 +34,12 @@ public class ReservationService {
 
 
     public ReservationEntity createReservation(ReservationRequestDto reservationRequestDto)  {
+        log.info("Reservation: start creation");
         HouseEntity houseEntity = houseRepository.findByName(reservationRequestDto.getHouseName());
         TenantEntity tenantEntity =tenantRepository.findByName(reservationRequestDto.getTenantName());
 
         checkDates(reservationRequestDto);
+        log.info("Reservation: check dates done ");
 
         ReservationEntity newReservationEntity = new ReservationEntity();
         newReservationEntity.setStartDate(reservationRequestDto.getStartDate());
@@ -45,9 +47,9 @@ public class ReservationService {
         newReservationEntity.setHouseEntity(houseEntity);
         newReservationEntity.setTenantEntity(tenantEntity);
         newReservationEntity.setTotalPrice(countTheTotalPrice(reservationRequestDto.getStartDate(),reservationRequestDto.getEndDate(),houseEntity.getUnitPrice()));
-
+        log.info("Reservation: vales set ");
         reservationRepository.save(newReservationEntity);
-        log.info("Reservation: " + newReservationEntity.getId() +  " was created.");
+        log.info("Reservation: " + newReservationEntity.getId() +  " was finished.");
         return newReservationEntity;
     }
 

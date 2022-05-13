@@ -1,5 +1,6 @@
 package my.rent.house.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,6 +29,7 @@ public class HouseEntity {
     @JoinColumn (name = "landlord_entity_id")
     private LandlordEntity landlordEntity;
 
+    @JsonIgnore
     @OneToOne (mappedBy = "houseEntity")
     private ReservationEntity reservationEntity;
 }

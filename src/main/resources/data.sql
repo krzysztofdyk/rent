@@ -1,10 +1,10 @@
 
-insert into HOUSE_ENTITY (id,name,unit_price,area, description)
-values (1,"Penthouse",1000,100,"You will fell like a king.")
-insert into HOUSE_ENTITY (id,name,unit_price,area, description)
-values (2,"Flat",100,25,"You will fell like a student.")
-insert into HOUSE_ENTITY (id,name,unit_price,area, description)
-values (3,"SemiDetachedHouse",500,110,"You will fell like a family member.")
+insert into HOUSE_ENTITY (id,name,unit_price,area, description,landlordName)
+values (1,"Penthouse",1000,100,"You will fell like a king.", "Kris")
+insert into HOUSE_ENTITY (id,name,unit_price,area, description,landlordName)
+values (2,"Flat",100,25,"You will fell like a student.","John")
+insert into HOUSE_ENTITY (id,name,unit_price,area, description,landlordName)
+values (3,"SemiDetachedHouse",500,110,"You will fell like a family member.","Mat")
 
 insert into LANDLORD_ENTITY (id,name)
 values (1, "Kris")
