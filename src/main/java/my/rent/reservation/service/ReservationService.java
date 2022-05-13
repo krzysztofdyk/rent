@@ -36,7 +36,7 @@ public class ReservationService {
     public ReservationEntity createReservation(ReservationRequestDto reservationRequestDto)  {
         log.info("Reservation: start creation");
         HouseEntity houseEntity = houseRepository.findByName(reservationRequestDto.getHouseName());
-        TenantEntity tenantEntity =tenantRepository.findByName(reservationRequestDto.getTenantName());
+        TenantEntity tenantEntity = tenantRepository.findByName(reservationRequestDto.getTenantName());
 
         checkDates(reservationRequestDto);
         log.info("Reservation: check dates done ");
