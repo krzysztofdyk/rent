@@ -34,5 +34,4 @@ public class ReservationEntity {
     private TenantEntity tenantEntity;
 
     private Long totalPrice;
-
 }

@@ -1,9 +1,7 @@
 package my.rent.reservation.dto;
 
 import lombok.*;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor

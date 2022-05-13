@@ -22,7 +22,4 @@ public class TenantEntity {
 
     @OneToOne(mappedBy = "tenantEntity")
     private ReservationEntity reservationEntity;
-
-
-
 }
