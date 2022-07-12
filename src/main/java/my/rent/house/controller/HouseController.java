@@ -1,5 +1,6 @@
 package my.rent.house.controller;
 
+import lombok.AllArgsConstructor;
 import my.rent.house.dto.HouseRequestDto;
 import my.rent.house.entity.HouseEntity;
 import my.rent.house.service.HouseService;
@@ -9,10 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class HouseController {
 
-    @Autowired
-    HouseService houseService;
+    private final HouseService houseService;
 
     @PostMapping("/houses")
     @ResponseStatus(HttpStatus.CREATED)

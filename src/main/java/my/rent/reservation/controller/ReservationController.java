@@ -1,5 +1,6 @@
 package my.rent.reservation.controller;
 
+import lombok.AllArgsConstructor;
 import my.rent.reservation.dto.ReservationRequestDto;
 import my.rent.reservation.entity.ReservationEntity;
 import my.rent.reservation.repository.ReservationRepository;
@@ -11,13 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class ReservationController {
 
-    @Autowired
-    ReservationService reservationService;
-
-    @Autowired
-    ReservationRepository reservationRepository;
+    private final ReservationService reservationService;
+    private final ReservationRepository reservationRepository;
 
     @PostMapping("/reservations")
     @ResponseStatus(HttpStatus.CREATED)

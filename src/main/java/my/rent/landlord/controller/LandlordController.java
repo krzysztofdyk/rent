@@ -1,5 +1,6 @@
 package my.rent.landlord.controller;
 
+import lombok.AllArgsConstructor;
 import my.rent.landlord.dto.LandlordRequestDto;
 import my.rent.landlord.entity.LandlordEntity;
 import my.rent.landlord.service.LandlordService;
@@ -10,10 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class LandlordController {
 
-    @Autowired
-    LandlordService landlordService;
+    private final LandlordService landlordService;
 
     @PostMapping("/landlords")
     @ResponseStatus(HttpStatus.CREATED)

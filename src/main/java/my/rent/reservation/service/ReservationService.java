@@ -23,14 +23,10 @@ import java.util.stream.Collectors;
 @Slf4j
 public class ReservationService {
 
-    @Autowired
-    ReservationRepository reservationRepository;
-    @Autowired
-    LandlordRepository landlordRepository;
-    @Autowired
-    HouseRepository houseRepository;
-    @Autowired
-    TenantRepository tenantRepository;
+    private final ReservationRepository reservationRepository;
+    private final LandlordRepository landlordRepository;
+    private final HouseRepository houseRepository;
+    private final TenantRepository tenantRepository;
 
 
     public ReservationEntity createReservation(ReservationRequestDto reservationRequestDto)  {
